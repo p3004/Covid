@@ -1,8 +1,8 @@
-package com.cases.covid
+package com.cases.covid.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.appbar.MaterialToolbar
+import com.cases.covid.R
 
 class MainActivity : AppCompatActivity() {
 
