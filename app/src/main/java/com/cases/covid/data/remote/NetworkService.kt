@@ -1,5 +1,6 @@
 package com.cases.covid.data.remote
 
+import com.cases.covid.data.model.CountryData
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -11,6 +12,6 @@ interface NetworkService {
     @GET(Endpoints.COUNTRIES)
     suspend fun getCovidDetailsByCountryName(
         @Path("countryName") countryName : String
-    )
+    ) : CountryData
 
 }
