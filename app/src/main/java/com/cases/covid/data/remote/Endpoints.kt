@@ -5,5 +5,5 @@ package com.cases.covid.data.remote
  */
 object Endpoints {
 
-    const val COUNTRIES = "countries"
+    const val COUNTRIES = "countries/{countryName}"
 }
