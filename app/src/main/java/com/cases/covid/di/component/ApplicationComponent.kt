@@ -1,7 +1,7 @@
 package com.cases.covid.di.component
 
 import com.cases.covid.CovidApplication
-import com.cases.covid.data.repository.CountryDataRespository
+import com.cases.covid.data.repository.CountryDataRepository
 import com.cases.covid.di.module.ApplicationModule
 import com.cases.covid.utils.network.NetworkHelper
 import dagger.Component
@@ -19,6 +19,6 @@ interface ApplicationComponent {
 
     fun getNetworkHelper() : NetworkHelper
 
-    fun getCountryDataRepository() : CountryDataRespository
+    fun getCountryDataRepository() : CountryDataRepository
 
 }

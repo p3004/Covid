@@ -9,7 +9,7 @@ import javax.inject.Inject
 /**
  * Created by Pallab Banerjee on 12/15/2020.
  */
-class CountryDataRespository @Inject constructor(private val networkService: NetworkService) {
+class CountryDataRepository @Inject constructor(private val networkService: NetworkService) {
 
         suspend fun fetchCountryDetails(countryName : String) : CountryData {
             return withContext(Dispatchers.IO){

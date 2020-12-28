@@ -6,7 +6,6 @@ import com.cases.covid.data.remote.NetworkService
 import com.cases.covid.utils.rule.TestCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -34,14 +33,14 @@ class CountryDataRepositoryTest {
     @Mock
     lateinit var networkService : NetworkService
 
-    private lateinit var countryDataRepository : CountryDataRespository
+    private lateinit var countryDataRepository : CountryDataRepository
 
     private lateinit var countryData: CountryData
 
 
     @Before
     fun setUp(){
-        countryDataRepository = CountryDataRespository(networkService)
+        countryDataRepository = CountryDataRepository(networkService)
         countryData = CountryData(0,0,0,
             "",0,0,0,0,
             0,0,0,0)
