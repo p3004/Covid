@@ -38,11 +38,11 @@ class MainViewModel(
                 } catch (e: Exception) {
                     _countryDataLiveData.postValue(Resource.error(null, e.message))
                 }
-
-
+            } else{
+                _countryDataLiveData.postValue(Resource.error(null, "No Internet connection!"))
             }
-        }
 
+        }
 
     }
 
