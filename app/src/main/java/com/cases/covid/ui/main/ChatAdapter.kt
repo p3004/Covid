@@ -19,8 +19,8 @@ import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()) {
 
     companion object{
-        private const val VIEW_TYPE_INCOMING_MESSAGE = 1;
-        private const val VIEW_TYPE_OUTGOING_MESSAGE = 2;
+         const val VIEW_TYPE_INCOMING_MESSAGE = 1;
+         const val VIEW_TYPE_OUTGOING_MESSAGE = 2;
     }
 
 
