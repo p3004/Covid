@@ -6,7 +6,9 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.compile_sdk_version
     buildToolsVersion rootProject.ext.build_tools_version
-
+    buildFeatures {
+        dataBinding true
+    }
 
     defaultConfig {
         applicationId "com.cases.covid"
