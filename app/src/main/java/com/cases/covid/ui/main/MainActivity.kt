@@ -2,8 +2,10 @@ package com.cases.covid.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil.setContentView
 import com.cases.covid.CovidApplication
 import com.cases.covid.R
+import com.cases.covid.databinding.ActivityMainBinding
 import com.cases.covid.di.component.DaggerActivityComponent
 import com.cases.covid.di.module.ActivityModule
 import javax.inject.Inject
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 
 
