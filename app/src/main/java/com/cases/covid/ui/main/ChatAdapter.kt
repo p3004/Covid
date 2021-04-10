@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.cases.covid.R
 import com.cases.covid.data.model.Chat
+import com.cases.covid.databinding.IncomingChatItemBinding
+import com.cases.covid.databinding.OutgoingChatItemBinding
 import kotlinx.android.synthetic.main.incoming_chat_item.view.tvIncomingText
 import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 
@@ -19,8 +21,8 @@ import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()) {
 
     companion object{
-         const val VIEW_TYPE_INCOMING_MESSAGE = 1;
-         const val VIEW_TYPE_OUTGOING_MESSAGE = 2;
+         const val VIEW_TYPE_INCOMING_MESSAGE = 1
+         const val VIEW_TYPE_OUTGOING_MESSAGE = 2
     }
 
 
@@ -31,33 +33,33 @@ class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()
 
 
 
-    class ChatInViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ChatInViewHolder(private val incomingChatItemBinding: IncomingChatItemBinding) : RecyclerView.ViewHolder(incomingChatItemBinding.root) {
 
-        private val tvIncomingText: TextView = itemView.tvIncomingText
 
         fun bind(chat: Chat) {
-              tvIncomingText.text = chat.message
+            incomingChatItemBinding.chatIncoming = chat
+            incomingChatItemBinding.executePendingBindings()
         }
 
     }
 
-    class ChatOutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ChatOutViewHolder(private val outgoingChatItemBinding: OutgoingChatItemBinding) : RecyclerView.ViewHolder(outgoingChatItemBinding.root) {
 
-        private val tvOutGoingChat: TextView = itemView.tvOutGoingChat
 
         fun bind(chat: Chat) {
-            tvOutGoingChat.text = chat.message
+            outgoingChatItemBinding.chatOutGoing = chat
+            outgoingChatItemBinding.executePendingBindings()
         }
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
          if(viewType == VIEW_TYPE_INCOMING_MESSAGE){
-             return  ChatInViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.incoming_chat_item,parent,false))
+             val incomingChatItemBinding: IncomingChatItemBinding = IncomingChatItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+             return  ChatInViewHolder(incomingChatItemBinding)
         }
-        return ChatOutViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.incoming_chat_item,parent,false)
-        )
+        val outgoingChatItemBinding : OutgoingChatItemBinding = OutgoingChatItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ChatOutViewHolder(outgoingChatItemBinding)
     }
 
 
