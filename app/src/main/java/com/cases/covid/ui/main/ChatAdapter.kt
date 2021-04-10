@@ -11,6 +11,7 @@ import com.cases.covid.R
 import com.cases.covid.data.model.Chat
 import com.cases.covid.databinding.IncomingChatItemBinding
 import com.cases.covid.databinding.OutgoingChatItemBinding
+import com.cases.covid.utils.common.VIEW_TYPE_INCOMING_MESSAGE
 import kotlinx.android.synthetic.main.incoming_chat_item.view.tvIncomingText
 import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 
@@ -20,10 +21,6 @@ import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 
 class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()) {
 
-    companion object{
-         const val VIEW_TYPE_INCOMING_MESSAGE = 1
-         const val VIEW_TYPE_OUTGOING_MESSAGE = 2
-    }
 
 
     override fun getItemViewType(position: Int): Int {
