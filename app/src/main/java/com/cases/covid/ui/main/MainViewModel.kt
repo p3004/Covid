@@ -24,9 +24,7 @@ class MainViewModel(
     val countryDataLiveData: LiveData<Resource<CountryData>> = _countryDataLiveData
 
     fun getCountryData(countryName: String) {
-
         viewModelScope.launch {
-
             if (networkHelper.checkIsNetworkConnected()) {
                 _countryDataLiveData.postValue(Resource.loading())
                 try {
@@ -41,10 +39,6 @@ class MainViewModel(
             } else{
                 _countryDataLiveData.postValue(Resource.error(null, "No Internet connection!"))
             }
-
         }
-
     }
-
-
 }

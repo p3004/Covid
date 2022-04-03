@@ -7,8 +7,6 @@
         <variable
             name="chatIncoming"
             type="com.cases.covid.data.model.Chat" />
-
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +15,6 @@
         android:background="@drawable/chat_incoming_buble"
         android:padding="10dp"
         >
-
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvIncomingText"
@@ -34,7 +31,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </layout>

@@ -1,6 +1,5 @@
 package com.cases.covid.data.remote
 
-import android.os.Build
 import com.cases.covid.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
