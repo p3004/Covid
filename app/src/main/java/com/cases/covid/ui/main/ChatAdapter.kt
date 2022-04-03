@@ -21,34 +21,23 @@ import kotlinx.android.synthetic.main.outgoing_chat_item.view.*
 
 class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()) {
 
-
-
     override fun getItemViewType(position: Int): Int {
         return getItem(position).viewType
     }
 
-
-
-
     class ChatInViewHolder(private val incomingChatItemBinding: IncomingChatItemBinding) : RecyclerView.ViewHolder(incomingChatItemBinding.root) {
-
-
         fun bind(chat: Chat) {
             incomingChatItemBinding.chatIncoming = chat
             incomingChatItemBinding.executePendingBindings()
         }
-
     }
 
     class ChatOutViewHolder(private val outgoingChatItemBinding: OutgoingChatItemBinding) : RecyclerView.ViewHolder(outgoingChatItemBinding.root) {
-
-
         fun bind(chat: Chat) {
             outgoingChatItemBinding.chatOutGoing = chat
             outgoingChatItemBinding.executePendingBindings()
         }
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
          if(viewType == VIEW_TYPE_INCOMING_MESSAGE){
@@ -59,7 +48,6 @@ class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()
         return ChatOutViewHolder(outgoingChatItemBinding)
     }
 
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if(getItem(position).viewType == VIEW_TYPE_INCOMING_MESSAGE){
             (holder as ChatInViewHolder).bind(getItem(position))
@@ -68,8 +56,6 @@ class ChatAdapter : ListAdapter<Chat,RecyclerView.ViewHolder>(ChatDiffCallBack()
             (holder as ChatOutViewHolder).bind(getItem(position))
         }
     }
-
-
 }
 
 

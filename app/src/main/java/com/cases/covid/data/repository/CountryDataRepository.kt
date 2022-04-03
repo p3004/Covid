@@ -11,7 +11,7 @@ import javax.inject.Inject
  */
 class CountryDataRepository @Inject constructor(private val networkService: NetworkService) {
 
-        suspend fun fetchCountryDetails(countryName : String) : CountryData {
+        suspend fun fetchCountryDetails(countryName : String): CountryData {
             return withContext(Dispatchers.IO){
                 networkService.getCovidDetailsByCountryName(countryName)}
         }

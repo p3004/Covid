@@ -2,6 +2,7 @@ package com.cases.covid.di.module
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.cases.covid.data.repository.CountryDataRepository
 import com.cases.covid.di.ActivityScope
 import com.cases.covid.ui.main.ChatAdapter
@@ -17,7 +18,7 @@ import dagger.Provides
  */
 
 @Module
-class ActivityModule(private val activity: AppCompatActivity) {
+class ActivityModule(private val activity: AppCompatActivity){
 
     @Provides
     @ActivityScope
@@ -31,5 +32,9 @@ class ActivityModule(private val activity: AppCompatActivity) {
     @Provides
     @ActivityScope
     fun provideChatAdapter() : ChatAdapter = ChatAdapter()
+
+    @Provides
+    @ActivityScope
+    fun provideLinearLayout() : LinearLayoutManager = LinearLayoutManager(activity)
 
 }
