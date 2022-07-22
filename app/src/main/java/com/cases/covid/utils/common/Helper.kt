@@ -6,7 +6,7 @@ class Helper {
 
     companion object{
         fun getIncomingMessage(countryData : CountryData) : String{
-            return "Active: ${countryData.active} \n Today: ${countryData.todayCases} \n Today Deaths: ${countryData.todayDeaths} \n Recovered: ${countryData.recovered} \n Total Tests: ${countryData.totalTests}"
+            return " Active: ${countryData.active} \n Today: ${countryData.todayCases} \n Today Deaths: ${countryData.todayDeaths} \n Recovered: ${countryData.recovered} \n Total Tests: ${countryData.totalTests}"
         }
     }
 }
