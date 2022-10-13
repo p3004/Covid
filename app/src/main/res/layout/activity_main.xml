@@ -12,13 +12,11 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/tbMain"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="40dp"
             android:background="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="Covid"
-            app:titleTextColor="@color/colorWhite"
             />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -36,12 +34,14 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etChatText"
             android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:padding="5dp"
-            android:background="@drawable/chat_type_text_bg"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:background="@drawable/chat_incoming_buble"
+            android:hint="Type country name e.g. India"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnAsk"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,15 +49,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAsk"
-            android:layout_width="100dp"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:text="@string/ask"
-            android:padding="5dp"
+            android:gravity="center"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:background="@drawable/ask_btn_bg"
-            android:textSize="17sp"
+            android:textSize="14sp"
             android:layout_marginEnd="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
