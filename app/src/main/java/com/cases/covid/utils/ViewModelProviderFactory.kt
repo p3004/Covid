@@ -24,7 +24,7 @@ class ViewModelProviderFactory<T : ViewModel>(
 
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalArgumentException::class)
-    override fun <T: ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(KClass.java)) return creator() as T
         throw IllegalArgumentException("Unknown class name")
     }
